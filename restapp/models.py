@@ -9,6 +9,6 @@ class Profile(models.Model):
     carrot = models.IntegerField(default=0, validators=[MaxValueValidator(100), MinValueValidator(0)])
     completed = models.BooleanField(default=False)
 
-    # class Meta:
-    #     # model = Profile
-    #     fields = ('name')
+    class Meta:
+        # model = Profile
+        ordering = ('name',) ## kolejność wyświetlania
