@@ -1,10 +1,14 @@
 # -*- coding: utf-8 -*-
+import random
+import timeit
+
 
 #### SORTOWANIE HEAPSORT
 # step 1: construct heap tree
 # step 2: delete root node and replace with last leaf node of tree
 # step 3: heapify tree
 # For a heap, the children of an element n are at index 2n+1 for the left child and 2n+2 for the right child.
+
 
 def heapSort(data):
     dataSize = len(data)
@@ -39,11 +43,17 @@ def heapSort(data):
     sorting()
 
 
-# data = [3, 2, 4, 5, 9, 8, 5, 1]
-#
-# print data
-# heapSort(data)
-# print data
+# generowanie danych
+data = []
+a = range(0, 1000)
+for i in range(0, 2000):
+    data.append(random.choice(a))
+
+# sprawdzenie wydajności kodu
+start_time = timeit.default_timer()
+heapSort(data)
+print(timeit.default_timer() - start_time)
+
 
 
 

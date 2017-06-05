@@ -1,0 +1,31 @@
+Aplikacja napisana wykorzystując django rest framework.
+
+Jak uruchomić aplikację?
+-> otworzyć terminal
+-> z poziomu katalogu zawierającego plik 'manage.py' należt uruchomić aplikację poleceniem: python manage.py runserver
+-> otworzyć przeglądarkę internetową
+-> na pasku adresu wpisać adres http aplikacji widoczny po jej uruchomieniu (http://127.0.0.1:8000/)
+
+Struktura projektu:
+
+project/ (katalog, w którym zawarty jest projekt)
+    manage.py (z linii komend pozwala na oddziaływanie z projektem)
+    project/ (właściwy katalog projektu, jego nazwa jest nazwą pakietu Django ważną przy imporcie (np. project.urls))
+        __init__.py (pusty plik, mówi pythonowi, że ten katalog powinien być uważany za pakiet pythona)
+        settings.py (ustawienia projektu)
+        urls.py (deklaracje URL dla projektu)
+        wsgi.py (punkt wejściowy dla serwerów WWW)
+    restapp/ (katalog zawierający katalogi aplikacji)
+        __init__.py
+        admin.py
+        apps.py
+        migrations/
+            __init__.py
+        models.py (model aplikacji: wykorzystuje model viewset zawierający kompletny zbiór domyślnych operacji odczytu i zapisu)
+        tests.py (testy automatyczne aplikacji - badanie działania metod add/get/create/update/delete profile)
+        views.py (widoki aplikacji)
+        urls.py (zawiera adresy URL, wykorzystana klasa Default_Router, która automatycznie tworzy widok API root)
+        serializers.py (zawiera model klasy serializer, która determinuje pola (fields) instancji modelu oraz zawiera proste implementacje metos create() i update())
+        heapsort.py (definicja metody sortowania heapsort wraz z generowaniem losowych danych (lista zawierająca 2000 elementów z przedziału 0-1000)
+                     oraz test badający wydajność fragmentu kodu - czas wykonywania)
+
